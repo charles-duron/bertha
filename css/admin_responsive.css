@@ -1,0 +1,98 @@
+/* CSS Document */
+@media screen and (min-width:800px) and (max-width:999px){
+ #gauche #logo{
+    font-size:33px;
+ }
+}
+
+@media screen and (min-width:600px) and (max-width:799px){
+ #conteneur{
+    width:100%;
+    left:0;
+    top:0;
+  }
+ #gauche #logo{
+    font-size:25px;
+    color:purple;
+ }
+ #gauche #logo span:last-child{
+    display:none;
+ } 
+ 
+}
+
+@media screen and (max-width:599px){
+ #conteneur{
+    width:100%;
+    left:0;
+    top:0;
+    height:100%;
+  }
+  
+  #gauche{
+  width:10%;
+  }
+  
+  #gauche ul li a span{
+  display:none;
+  }
+  
+  #gauche ul li a:hover:before{
+  content:"";
+  }
+  
+  #desactive{
+  display:none;
+  }
+  
+  /* c'est trop bon !*/
+  #gauche ul li:nth-child(1n+1) a{
+    background-position:center center;
+  }
+  
+  #centre{
+    width:14%;
+  }
+  
+  #btn_centre {
+    width:26px;
+    height:25px;
+    top:52px;
+    left:10%;
+  }  
+  
+  #droite{
+    width:90%;
+    left:10%;
+  }
+  
+ #gauche #logo{
+    font-size:60px;
+ }
+ #gauche #logo span{
+    display:none;
+ } 
+ #connecte{
+    display:none;
+ }
+ #droite h1{
+    font-size:18px;
+    padding:15px 2% 0 10%;
+    border:none;
+ }
+#droite form{
+    padding: 2% 3% 2% 7%;
+    }
+    
+#droite form #indexation {
+    width: 47%;
+    float:left;
+}     
+#droite form #visible {
+    width: 47%;
+    float:right;
+}    
+     
+ 
+}
+

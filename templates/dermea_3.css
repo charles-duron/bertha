@@ -1,0 +1,199 @@
+ /*
+*/   body{
+  background-color:#f3f3f3;
+  background:url('../img/fond_g.jpg') repeat-y top left, url('../img/fond.jpg') repeat-y top right;
+}
+
+#titre_evenement{
+ background:url('../img/icones/evenement.png') no-repeat right 8px;
+ background-size:60px;
+}
+
+h1{
+  color:#333333;
+  font-size:270%;
+  font-weight:normal;
+  font-family: 'Oranienbaum', serif;
+  padding:20px 0 5px;
+}
+
+h2{
+  color:#a2357e;
+  font-size:160%;
+  font-weight:normal;
+  font-family: 'Oranienbaum', serif;
+  padding:10px 0 3px;    
+}
+
+h3{
+  color:#6f6e6e;
+  font-size:125%;
+  font-weight:normal;
+  border-radius:4px;
+  width:auto;
+  font-family: 'Oranienbaum', serif;
+  padding:4px 8px;
+  background-color:#e4e4e4;    
+}
+
+a{
+  color:#A2357E;
+}
+
+ul{
+  list-style-type:none;
+}
+
+#conteneur{
+  width:76%;
+  position:absolute;
+  top:15px;
+  left:0;
+  right:0;
+  z-index:1;
+  margin:auto;
+  box-shadow:0px 4px 5px #e2e2e2;
+  background-color:white;   
+}
+
+#header_1{
+  height:60px;
+  border-radius:0 50px 0 0;
+}
+
+#header_1 #langue{
+  float:right;
+  padding:5px 0 5px 2px;
+}
+
+#header_1 #langue ul li{
+  float:left;
+  width:30px;
+}
+
+#header_2{
+  display:block;
+  min-height:100px;
+  border-bottom:16px solid #e4e4e4;
+}
+
+#header_3{
+  display:none;
+}
+
+#logo{
+  position:absolute;
+  z-index:400;
+  top:40px;
+  left:5%;
+}
+
+#papillon{
+  position:absolute;
+  z-index:400;
+  width:100px;
+  height:91px;
+  top:-5px;
+  left:28%;
+  background:url(../img/papillon.png) no-repeat top left;
+}
+
+#logo img{
+  height:100px;
+}
+
+#infos{
+  margin:10px;
+  padding:10px;
+  border:1px solid gray;
+}
+
+#infos h3{
+  margin-bottom:10px;
+  font-size:16px
+}
+
+#infos p{
+  font-size:13px;
+}
+
+#section_1{
+  display:none;
+}
+
+#section_2{
+  width:60%;
+  float:left;
+  padding: 0px 5% 30px 5%;
+}
+
+#section_2 p{
+  padding: 1% 0;
+}
+
+#section_2 #g, #section_2 #d{
+  display:inline-block;
+  width:48%;
+  margin-top:15px;
+  vertical-align:top;  
+} 
+
+#section_2 ul li{
+  background:url(../img/li.png) no-repeat left center;
+  padding-left:15px;
+  margin:4px 2%;  
+}
+
+#section_3{
+  width:30%; 
+  float:right; 
+  padding:0px 0 30px 0;
+}
+
+.bloc .crea{
+  color:#b23f8c;
+}
+
+/***************************************************************/
+#gabarit1,#gabarit2,#gabarit3,#gabarit4,#gabarit5{
+  border:2px solid #e2e2e2;
+  padding:0px 4% 15px;
+  width:92%;
+  margin-top:0;
+} 
+
+
+/*footer*/
+#footer_1{
+  clear:both;
+  height:100px;
+  padding:10px 0 0 3%;
+  background-color:#a2357e;
+  border-top:5px solid #ce4ba2;
+  color:white;
+}
+
+#footer_1 div{
+  display:inline-block;
+  width:160px;
+  font-size:80%;
+  margin-right:5px;
+  vertical-align:top;
+}
+
+#footer_2{
+  background-color:#a2357e;
+  height:20px;
+  line-height:30px;
+  text-align:center;
+  color:white;
+  font-family:arial, sans-serif;
+  font-size:72%;
+  padding-bottom:10px;
+}
+
+#footer_2 a{
+  color:white;
+}
+
+            

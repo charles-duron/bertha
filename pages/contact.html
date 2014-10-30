@@ -1,0 +1,21 @@
+<h1>Nous contacter</h1>
+<form method="POST" name="contact" action="global.php?action=contact" id="form_contact">
+  <label>Tél de l'institut : 02 99 54 98 96</label>
+  <?php if(isset($avertissement)){echo $avertissement;} ?>   
+  <input tabindex="1" <?php if(isset($color_champ['prenom_contact'])){echo $color_champ['prenom_contact'];}?> placeholder="Prénom" type="text" name="prenom_contact" value="<?php if(isset($_POST['prenom_contact'])){echo $_POST['prenom_contact'];}?>" />
+  <input tabindex="2" <?php if(isset($color_champ['nom_contact'])){echo $color_champ['nom_contact'];}?> placeholder="Nom" type="text" name="nom_contact" value="<?php if(isset($_POST['nom_contact'])){echo $_POST['nom_contact'];}?>" />
+  <input tabindex="3" <?php if(isset($color_champ['mel_contact'])){echo $color_champ['mel_contact'];}?> placeholder="Email" type="text" name="mel_contact" value="<?php if(isset($_POST['mel_contact'])){echo $_POST['mel_contact'];}?>" />
+  <input tabindex="4" <?php if(isset($color_champ['entreprise'])){echo $color_champ['entreprise'];}?> placeholder="Entreprise" type="text" name="entreprise" value="<?php if(isset($_POST['entreprise'])){echo $_POST['entreprise'];}?>" />
+  <input tabindex="5" <?php if(isset($color_champ['objet'])){echo $color_champ['objet'];}?> placeholder="Objet" type="text" name="objet" value="<?php if(isset($_POST['objet'])){echo $_POST['objet'];}?>" />  
+  <textarea tabindex="6" <?php if(isset($color_champ['message'])){echo $color_champ['message'];}?> placeholder="Message..." name="message"><?php if(isset($_POST['message'])){echo $_POST['message'];}?></textarea> 
+  
+  <img id="captcha" src="../outils/captcha.php" alt="code sécurité" />  
+  <input <?php if(isset($color_champ['captcha'])){echo $color_champ['captcha'];} ?> tabindex="7" placeholder="Recopiez le code" type="text" name="captcha" 
+  value="" />
+
+  <input tabindex="8" type="submit" name="submit" value="ENVOYER" /> 
+ 
+</form>
+<script type="text/javascript">
+document.contact.prenom_contact.focus();
+</script>   

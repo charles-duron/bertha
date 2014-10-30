@@ -1,0 +1,61 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> name="form_evenement" id="form_evenement" action="admin.php?action=<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+<input <?php if(isset($color_champ['titre_evenement'])){echo $color_champ['titre_evenement'];} ?> placeholder="Titre de l'événement" type="text" name="titre_evenement" value="<?php if(isset($_POST['titre_evenement'])) {echo $_POST['titre_evenement']; } ?>" />
+
+<select name="id_langue" <?php if(isset($color_champ['id_langue'])){echo $color_champ['id_langue'];} ?>>
+<?php echo $ld_langues; ?>
+</select>
+<hr />
+<textarea style="height:150px" name="contenu_evenement" <?php if(isset($color_champ['contenu_evenement'])){echo $color_champ['contenu_evenement'];} ?> placeholder="Evénement ici..."><?php if(isset($_POST['contenu_evenement'])){echo $_POST['contenu_evenement']; }?></textarea>
+<hr />
+<select name="nature" id="nature_evenement">
+  <option value="">Couleur...</option>
+  <option id="color_1" value="16cff6" <?php if(isset($selected2['16cff6'])){echo $selected2['16cff6'];} ?>>bleu</option>    
+  <option id="color_2" value="70d352" <?php if(isset($selected2['70d352'])){echo $selected2['70d352'];} ?>>vert</option>  
+  <option id="color_3" value="f7d30d" <?php if(isset($selected2['f7d30d'])){echo $selected2['f7d30d'];} ?>>jaune</option>
+  <option id="color_4" value="f7700d" <?php if(isset($selected2['f7700d'])){echo $selected2['f7700d'];} ?>>orange</option>
+  <option id="color_5" value="f4290d" <?php if(isset($selected2['f4290d'])){echo $selected2['f4290d'];} ?>>rouge</option> 
+  <option id="color_6" value="ec4bad" <?php if(isset($selected2['ec4bad'])){echo $selected2['ec4bad'];} ?>>violet</option> 
+</select>
+<hr />
+<div id="form_g">
+  <label class="label_long">Début de l'événement</label>
+  <input
+  <?php if(isset($color_champ['date_debut_evenement'])){echo $color_champ['date_debut_evenement'];} ?>
+  type="text" class="date" name="date_debut_evenement" value="<?php if(isset($_POST['date_debut_evenement'])) {echo $_POST['date_debut_evenement']; } ?>" />
+  <a href="#" onClick="window.open('../outils/calendrier.php?frm=form_evenement&ch=date_debut_evenement', 'calendrier', 'width=320,height=180,scrollbars=0').focus();"><img src="../img/icones/calendrier.png" alt="" title="Calendrier" /></a>
+</div>
+<div id="form_d">
+  <label class="label_long">Fin de l'événement</label>
+  <input
+  <?php if(isset($color_champ['date_fin_evenement'])){echo $color_champ['date_fin_evenement'];} ?>
+  type="text" class="date" name="date_fin_evenement" value="<?php if(isset($_POST['date_fin_evenement'])) {echo $_POST['date_fin_evenement']; } ?>" />
+  <a href="#" onClick="window.open('../outils/calendrier.php?frm=form_evenement&ch=date_fin_evenement', 'calendrier', 'width=320,height=180,scrollbars=0').focus();"><img src="../img/icones/calendrier.png" alt="" title="Calendrier" /></a>
+</div>
+<hr />
+<div class="options_page">
+  <h3>Options de la page</h3>
+  <div class="visibilite">
+    <span class="onoff">ON | OFF</span>
+    <hr />
+    <label>Visible</label>  
+    <input type="radio" name="visible" value="non" <?php if(isset($checked['non'])) { echo $checked['non']; } ?> /> 
+    <input type="radio" name="visible" value="oui" <?php if(isset($checked['oui'])) { echo $checked['oui']; } ?> /> 
+    <hr />    
+  </div>
+  <hr />
+</div>
+
+<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+
+</form>
+
+<script type="text/javascript">
+document.form_evenement.id_langue.focus();
+</script>
+
+
+
+
+
+

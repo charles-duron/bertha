@@ -1,0 +1,152 @@
+<form action="<?php echo $action_form; ?>" enctype="multipart/form-data" method="POST" id="form_parametre">
+  <h3>Choisissez une catégorie</h3>
+  <?php if(isset($avertissement)){echo $avertissement;} ?>
+  <ul>
+    <li><a href="admin.php?action=parametres&amp;cat=1" <?php if(isset($cat[1])){echo $cat[1];} ?>>MISE EN FORME</a></li>
+    <li><a href="admin.php?action=parametres&amp;cat=2" <?php if(isset($cat[2])){echo $cat[2];} ?>>MAILS</a></li>    
+    <li><a href="admin.php?action=parametres&amp;cat=3" <?php if(isset($cat[3])){echo $cat[3];} ?>>FLUX RSS</a></li>    
+    <li><a href="admin.php?action=parametres&amp;cat=4" <?php if(isset($cat[4])){echo $cat[4];} ?>>OPTIONS</a></li>    
+  </ul>
+  <fieldset <?php if(isset($cat[1])){echo $cat[1];} ?>>
+    <legend>MISE EN FORME</legend>
+    <div>
+      <label>Template du Front Office</label>
+      <select name="id_template">
+        <?php if(isset($ld_templates)){echo $ld_templates;} ?>
+      </select>
+      <label>Police du Front Office</label>
+      <select name="id_font" <?php if(isset($color_champ['id_font'])){echo $color_champ['id_font'];} ?>>
+        <?php if(isset($ld_fonts)){echo $ld_fonts;} ?>
+      </select>
+      <select name="taille_font" <?php if(isset($color_champ['taille_font'])){echo $color_champ['taille_font'];} ?>>
+        <option value="">Taille de la police...</option>
+        <option value="1" <?php if(isset($selected5[1])){echo $selected5[1];} ?> style="font-size:0.8vw">Taille des caractères : 0.8vw</option>      
+        <option value="2" <?php if(isset($selected5[2])){echo $selected5[2];} ?> style="font-size:0.9vw">Taille des caractères : 0.9vw</option>
+        <option value="3" <?php if(isset($selected5[3])){echo $selected5[3];} ?> style="font-size:1vw">Taille des caractères : 1.0vw</option>
+        <option value="4" <?php if(isset($selected5[4])){echo $selected5[4];} ?> style="font-size:1.1vw">Taille des caractères : 1.1vw</option>        
+      </select>
+      <label>Intitulé du site</label>
+    	<input type="text" name="titre_site" value="<?php if(isset($_POST['titre_site'])){echo $_POST['titre_site'];} ?>" />      
+      <label>Logo du site</label>
+      <?php if(isset($_POST['logo'])){echo $_POST['logo'];} ?><input type="file" id="file1" name="logo" value="" />
+      <label>Favicon du site</label>
+      <?php if(isset($_POST['favicon'])){echo $_POST['favicon'];} ?><input type="file" id="file2" name="favicon" value="" style="background:url(../img/icones/favicon.png)" />
+      <label>Page d'intro à afficher</label>
+      <select name="id_page">
+        <?php if(isset($ld_pages)){echo $ld_pages;} ?>
+      </select>          
+    </div>
+    <div>
+      <label>Thème du Back Office</label>  
+      <select name="id_theme">
+        <option value="">Choisir...</option>
+        <option value="1" <?php if(isset($selected2[1])){echo $selected2[1];} ?>>Petite fleur</option>
+        <option value="2" <?php if(isset($selected2[2])){echo $selected2[2];} ?>>Kaki trash</option>
+      </select>
+    </div>
+    <input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />    
+  </fieldset>
+  <fieldset <?php if(isset($cat[2])){echo $cat[2];} ?>>
+    <legend>MAILS</legend>  
+  	<label>Mail destinataire du formulaire contact</label>
+  	<input type="text" name="mail_retour" <?php if(isset($color_champ['mail_retour'])){echo $color_champ['mail_retour'];} ?> value="<?php if(isset($_POST['mail_retour'])){echo $_POST['mail_retour'];} ?>" />
+  	<label>Mail expéditeur réponse au formulaire contact</label>
+  	<input type="text" name="mail_reponse" <?php if(isset($color_champ['mail_reponse'])){echo $color_champ['mail_reponse'];} ?> value="<?php if(isset($_POST['mail_reponse'])){echo $_POST['mail_reponse'];} ?>" />
+  	<label>Objet du mail de confirmation</label>
+  	<input type="text" name="objet_mail" <?php if(isset($color_champ['objet_mail'])){echo $color_champ['objet_mail'];} ?> value="<?php if(isset($_POST['objet_mail'])){echo $_POST['objet_mail'];} ?>" />
+  	<label>Contenu du mail de confirmation</label>  
+	<textarea name="message_mail" id="message_mail" <?php if(isset($color_champ['message_mail'])){echo $color_champ['message_mail'];} ?>><?php if(isset($_POST['message_mail'])){echo $_POST['message_mail'];} ?></textarea> 
+	<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+  </fieldset>
+  <fieldset <?php if(isset($cat[3])){echo $cat[3];} ?>>
+    <legend>FLUX RSS</legend>  
+  	<label>Titre du flux RSS émis</label>
+  	<input type="text" name="titre_flux" <?php if(isset($color_champ['titre_flux'])){echo $color_champ['titre_flux'];} ?> value="<?php if(isset($_POST['titre_flux'])){echo $_POST['titre_flux'];} ?>" />
+  	<label>Description du flux RSS émis</label>
+  	<textarea name="description_flux" style="height:150px" <?php if(isset($color_champ['description_flux'])){echo $color_champ['description_flux'];} ?>><?php if(isset($_POST['description_flux'])){echo $_POST['description_flux'];} ?></textarea>
+    <input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+  </fieldset>
+  
+  <fieldset class="options_page" <?php if(isset($cat[4])){echo $cat[4];} ?>>
+    <legend>OPTIONS et NETLINKING</legend>
+    <div class="visibilite">
+      <span class="onoff">ON | OFF</span>
+      <hr />
+      <label>Formulaire de contact</label>           
+      <input type="radio" name="form_contact" value="non" <?php if(isset($checked1['non'])) { echo $checked1['non']; } ?> /> 
+      <input type="radio" name="form_contact" value="oui" <?php if(isset($checked1['oui'])) { echo $checked1['oui']; } ?> /> 
+      <hr />
+      <label>Galerie photos</label>           
+      <input type="radio" name="galerie_photos" value="non" <?php if(isset($checked2['non'])) { echo $checked2['non']; } ?> /> 
+      <input type="radio" name="galerie_photos" value="oui" <?php if(isset($checked2['oui'])) { echo $checked2['oui']; } ?> /> 
+      <hr /> 
+      <label>Moteur de recherche</label>           
+      <input type="radio" name="form_recherche" value="non" <?php if(isset($checked3['non'])) { echo $checked3['non']; } ?> /> 
+      <input type="radio" name="form_recherche" value="oui" <?php if(isset($checked3['oui'])) { echo $checked3['oui']; } ?> /> 
+      <hr />
+      <label>Flux RSS</label>           
+      <input type="radio" name="rss" value="non" <?php if(isset($checked4['non'])) { echo $checked4['non']; } ?> /> 
+      <input type="radio" name="rss" value="oui" <?php if(isset($checked4['oui'])) { echo $checked4['oui']; } ?> /> 
+      <hr /> 
+      <label>Réseaux sociaux</label>           
+      <input type="radio" name="reseaux" value="non" <?php if(isset($checked5['non'])) { echo $checked5['non']; } ?> /> 
+      <input type="radio" name="reseaux" value="oui" <?php if(isset($checked5['oui'])) { echo $checked5['oui']; } ?> /> 
+      <hr />
+      <label>Syndication de contenus</label>           
+      <input type="radio" name="syndication" value="non" <?php if(isset($checked6['non'])) { echo $checked6['non']; } ?> /> 
+      <input type="radio" name="syndication" value="oui" <?php if(isset($checked6['oui'])) { echo $checked6['oui']; } ?> /> 
+      <hr />         
+      <label>Calendrier des évènements</label>           
+      <input type="radio" name="calendrier" value="non" <?php if(isset($checked7['non'])) { echo $checked7['non']; } ?> /> 
+      <input type="radio" name="calendrier" value="oui" <?php if(isset($checked7['oui'])) { echo $checked7['oui']; } ?> /> 
+      <hr />         
+      <label>Slider d'intro</label>           
+      <input type="radio" name="slider" value="non" <?php if(isset($checked8['non'])) { echo $checked8['non']; } ?> /> 
+      <input type="radio" name="slider" value="oui" <?php if(isset($checked8['oui'])) { echo $checked8['oui']; } ?> /> 
+      <hr />         
+    </div>
+    <div class="reseaux">       
+      <label><img src="../img/icones/facebook.png" />Facebook</label>           
+      <input type="checkbox" name="facebook" value="1" <?php if(isset($checked['facebook'])) {echo $checked['facebook']; } ?> />  
+      <input placeholder="URL facebook" type="text" name="url_facebook" value="<?php if(isset($_POST['url_facebook'])){echo $_POST['url_facebook'];} ?>"/>              
+      <hr />
+      <label><img src="../img/icones/twitter.png" />Twitter</label>           
+      <input type="checkbox" name="twitter" value="2" <?php if(isset($checked['twitter'])) {echo $checked['twitter']; } ?> />  
+      <input placeholder="URL Twitter" type="text" name="url_twitter" value="<?php if(isset($_POST['url_twitter'])){echo $_POST['url_twitter'];} ?>"/>                      
+      <hr />
+      <label><img src="../img/icones/googleplus.png" />Google +</label>           
+      <input type="checkbox" name="googleplus" value="3" <?php if(isset($checked['googleplus'])) {echo $checked['googleplus']; } ?> />  
+      <input placeholder="URL Google +" type="text" name="url_googleplus" value="<?php if(isset($_POST['url_googleplus'])){echo $_POST['url_googleplus'];} ?>" />                       
+      <hr /> 
+      <label><img src="../img/icones/linkedin.png" />Linkedin</label>           
+      <input type="checkbox" name="linkedin" value="4" <?php if(isset($checked['linkedin'])) {echo $checked['linkedin']; } ?> />  
+      <input placeholder="URL Linkedin" type="text" name="url_linkedin" value="<?php if(isset($_POST['url_linkedin'])){echo $_POST['url_linkedin'];} ?>"  />                      
+      <hr />
+      <label><img src="../img/icones/viadeo.png" />Viadeo</label>           
+      <input type="checkbox" name="viadeo" value="5" <?php if(isset($checked['viadeo'])) {echo $checked['viadeo']; } ?> />  
+      <input placeholder="URL Viadeo" type="text" name="url_viadeo" value="<?php if(isset($_POST['url_viadeo'])){echo $_POST['url_viadeo'];} ?>" />             
+      <hr /> 
+      <label><img src="../img/icones/pinterest.png" />Pinterest</label>           
+      <input type="checkbox" name="pinterest" value="6" <?php if(isset($checked['pinterest'])) {echo $checked['pinterest']; } ?> />  
+      <input placeholder="URL Pinterest" type="text" name="url_pinterest" value="<?php if(isset($_POST['url_pinterest'])){echo $_POST['url_pinterest'];} ?>" />             
+      <hr /> 
+      <label><img src="../img/icones/flickr.png" />Flickr</label>           
+      <input type="checkbox" name="flickr" value="7" <?php if(isset($checked['flickr'])) {echo $checked['flickr']; } ?> />  
+      <input placeholder="URL Flickr" type="text" name="url_flickr" value="<?php if(isset($_POST['url_flickr'])){echo $_POST['url_flickr'];} ?>" />             
+      <hr />                         
+    </div>
+    <hr />
+    <input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+  </fieldset>    
+	
+</form>
+
+
+
+
+
+
+
+
+
+

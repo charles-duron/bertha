@@ -1,0 +1,27 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> enctype="multipart/form-data" id="form_medias" name="form_medias" action="admin.php?action=<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+
+<input
+<?php if(isset($color_champ['titre_media'])){echo $color_champ['titre_media'];} ?>
+placeholder="Titre du media" type="text" name="titre_media" value="<?php if(isset($_POST['titre_media'])) {echo $_POST['titre_media']; } ?>" />
+
+<input <?php if(isset($color_champ['alt_media'])){echo $color_champ['alt_media'];} ?> placeholder="Contenu de l'attribut alt (pour référencement Google)" type="text" name="alt_media" value="<?php if(isset($_POST['alt_media'])) {echo $_POST['alt_media']; } ?>" />
+
+<input <?php if(isset($color_champ['lien_media'])){echo $color_champ['lien_media'];} ?>
+placeholder="url vers vidéo" type="text" name="lien_media" value="<?php if(isset($_POST['lien_media'])) {echo $_POST['lien_media']; } ?>" />
+
+<input <?php if(isset($color_champ['fichier_media'])){echo $color_champ['fichier_media'];} ?> type="file" name="fichier_media" value="" />
+
+<label class="label_court">Slide</label>
+<input <?php  if(isset($checked['slide'])) {echo $checked['slide'];} ?> type="checkbox" name="slide" value="oui" />
+<label class="label_court">Galerie photos</label>
+<input <?php if(isset($checked['press_book'])) {echo $checked['press_book'];} ?> type="checkbox" name="press_book" value="oui" />
+<hr />
+
+<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+
+</form>
+
+<script type="text/javascript">
+document.form_medias.titre_media.focus();
+</script>

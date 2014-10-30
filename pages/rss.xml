@@ -1,0 +1,2 @@
+<?php if(isset($flux_rss)){echo $flux_rss;} ?>
+

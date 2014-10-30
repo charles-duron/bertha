@@ -1,0 +1,21 @@
+Options +FollowSymlinks
+SetEnv PHP_VER 5
+RewriteEngine on
+# RewriteEngine off désactive la règle de réécriture si problème
+
+# URL A REECRIRE
+#^ Indique le début de l'URL à récrire. Ce caractère est facultatif mais il est plus rigoureux de l'utiliser.
+# page- Cette partie de l'URL n'est pas utilisée directement. Nous aurions pu écrire p à la place de page.
+# Ce préfixe peut servir à différencier différents schémas d'URL, et il permet à l'internaute de mieux comprendre l'objet de la page.
+# () Les parenthèses servent à encadrer une variable dont la valeur est récupérée dans la 3ème partie de la ligne.
+# [0-9]+ Indique que la variable est composée d'un ou plusieurs chiffres.
+# $ Indique la fin de l'URL à réécrire. Ce caractère est facultatif mais il est plus rigoureux de l'utiliser.
+
+# URL REECRITE
+# /pages/ Il suffit d'indiquer l'emplacement du fichier de manière relative au répertoire dans lequel est situé le fichier .htaccess (donc on peut se passer de cet élément). Sur certains hébergeurs mutualisés (OVH ou Sivit pour n'en citer que deux), vous devez indiquer le chemin complet vers le fichier, à partir de la racine du site, comme dans notre exemple.
+# global.php Nom du fichier que le serveur doit utiliser pour afficher la page. C'est le nom d'un fichier qui existe physiquement et qui contient un script (PHP dans notre exemple) de gestion de la page dynamique.
+# ? Caractère obligatoire précédant la série de variables passées dans l'URL réécrite.
+# id_page=$1 Indique que la variable nommée id_page prendra la valeur située dans la première paire de parenthèses.
+# & Caractère utilisé pour séparer 2 variables dans l'URL réécrite.
+
+RewriteRule ^page-([0-9]+)\.html$   /pages/global.php?action=page&id_page=$1 [L]   

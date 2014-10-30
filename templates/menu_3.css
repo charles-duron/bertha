@@ -1,0 +1,63 @@
+/* CSS Document */
+#header_2 #menu{
+float:right;
+padding:60px 2% 0 0px;
+min-height:30px;
+font-family: 'Oranienbaum', serif;
+}
+
+#footer_1 #menu{
+float:right;
+padding:0 2% 0 0px;
+min-height:30px;
+font-family: 'Oranienbaum', serif;
+}
+
+#menu li{
+float:left;
+list-style-type:none;
+margin:0 15px 10px;
+height:inherit;
+}
+
+#menu li a{
+height:inherit;
+line-height:25px;
+display:block;
+text-decoration:none;
+color:#6f6e6e;
+padding:0;
+font-size:160%;
+border-bottom:3px solid transparent;
+}
+
+#menu li a:hover{
+color:black;
+border-bottom:3px solid #333333;
+}
+
+#menu li ul{
+padding:0;
+}
+
+#menu li ul li{
+clear:both;
+padding-left:5px;
+font-family: 'Ubuntu Condensed', sans-serif;
+margin:0;
+width:100%;
+background:url(../img/separateur_menu.png) repeat-y left;
+color:#d8d8d8;
+}
+
+#menu li ul li a{
+font-size:100%;
+}
+
+#menu li ul li a:hover:before{
+content:" > ";
+}
+
+.slide{
+display:none;
+}

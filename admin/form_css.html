@@ -1,0 +1,26 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> id="form_css" name="form_css" enctype="multipart/form-data" action="<?php echo $action_form; ?>" method="POST">
+  <?php if(isset($avertissement)){echo $avertissement;} ?>
+  <select name="id_template" <?php if(isset($color_champ['id_template'])){echo $color_champ['id_template'];} ?>>
+  <?php if(isset($ld_templates)){echo $ld_templates;} ?>
+  </select><a href="admin.php?action=templates"><img src="../img/icones/ajouter.png" title="ajouter un template" alt="Ajouter" /></a>
+
+	<input placeholder="Saisissez le nom de la feuille de style" <?php if(isset($color_champ['nom_css'])){echo $color_champ['nom_css'];} ?> type="text" name="nom_css" value="<?php if(isset($_POST['nom_css'])){echo $_POST['nom_css'];} ?>" />
+
+	<label>Feuille de style à uploader (.css)</label>
+	<input type="file" name="lien_css" />
+
+	<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+
+</form>
+<script type="text/javascript">
+document.form_css.id_template.focus();
+</script>
+
+
+
+
+
+
+
+
+

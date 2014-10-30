@@ -1,0 +1,18 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> id="form_album" name="form_album" action="admin.php?action=<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+
+<select name="id_langue" <?php if(isset($color_champ['id_langue'])){echo $color_champ['id_langue'];} ?> <?php if(isset($disabled)){echo $disabled;} ?>>
+<?php echo $ld_langues; ?>
+</select>	
+<hr />
+<input <?php if(isset($color_champ['titre_album'])){echo $color_champ['titre_album'];} ?> placeholder="Intitulé de l'album" type="text" name="titre_album" value="<?php if(isset($_POST['titre_album'])) {echo $_POST['titre_album']; } ?>" />
+
+<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+
+</form>
+
+
+
+
+
+

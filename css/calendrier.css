@@ -1,0 +1,267 @@
+/***********
+	Calendrier
+***********/
+#conteneur_calendrier{
+padding-right:15%;
+margin:15px 0;
+width:85%;}
+
+#calendar {
+width:100%;
+border-collapse: collapse;
+border-right: 1px solid #999999;
+border-bottom: 1px solid #999999;
+margin:10px 0 5px;
+padding: 0;
+text-align: center;
+font-size:90%;}
+#calendar th {
+border-left: 1px solid #999999;
+border-top: 1px solid #999999;
+padding:0.3em;
+font-weight:normal;
+width:14%;
+height:30px;
+font-size:110%;}
+
+#calendar td {
+border-left: 1px solid #999999;
+border-top: 1px solid #999999;
+margin: 0;
+padding: 0;
+height:35px;}
+
+#calendar td a {
+display:block;
+text-decoration: none;
+color:white;
+height:inherit;
+line-height:32px;
+height:36px;}
+
+#calendar td a:hover {
+background-color:#dfdcdc !important;
+color:black !important;}
+/***********
+	Jours particuliers
+***********/
+.sam{
+background-color: #f3f3f3;}
+
+.dim{
+background-color: #f3f3f3;}
+
+.aut{
+background-color: #f3f3f3;}
+
+.ajd{
+background-color:#dfdcdc;}
+
+.ajd a{
+color:black !important;}
+
+#calendrier {
+width: 100%;
+margin: 0;
+text-align: center;}
+
+#calendrier select{
+width: 49.4%;
+height:30px;
+margin: 0;
+padding: 0;}
+/***********
+	Infobulles
+***********/
+[data-tip]{
+position:relative;}
+
+[data-tip]:hover:before{
+content:attr(data-tip);
+position: absolute;
+padding: 0 10px;
+display:block;
+width:150px;
+height:36px;
+line-height:36px;
+overflow:hidden;
+background-color:gray;
+left:10px;
+top: 30px;
+border-radius: 3px;
+color:white;
+font-size: 11px;
+z-index:100;}
+
+.double_event a[data-tip]:hover:before{
+left:5px;
+top: 30px;}
+
+.double_event a+a[data-tip]:hover:before{
+top: 15px;}
+
+[data-tip]:hover:after {
+content:"";
+position: absolute;
+border-bottom: 8px solid gray;
+border-left: 8px solid transparent;
+border-right: 8px solid transparent;
+left:15px;
+top:25px;}
+
+.double_event a[data-tip]:hover:after {
+z-index:100;
+top:25px;}
+
+.double_event a+a[data-tip]:hover:after {
+top:10px;}
+
+/***********
+	Calendrier
+***********/
+#conteneur_calendrier{
+padding-right:15%;
+margin:15px 0;
+width:85%;}
+
+#calendar {
+width:100%;
+border-collapse: collapse;
+border-right: 1px solid #999999;
+border-bottom: 1px solid #999999;
+margin:10px 0 5px;
+padding: 0;
+text-align: center;
+font-size:90%;}
+#calendar th {
+border-left: 1px solid #999999;
+border-top: 1px solid #999999;
+padding:0.3em;
+font-weight:normal;
+width:14%;
+height:30px;
+font-size:110%;}
+
+#calendar td {
+border-left: 1px solid #999999;
+border-top: 1px solid #999999;
+margin: 0;
+padding: 0;
+height:35px;}
+
+#calendar td a {
+display:block;
+text-decoration: none;
+color:white;
+height:inherit;
+line-height:32px;
+height:36px;}
+
+#calendar td a:hover {
+background-color:#dfdcdc !important;
+color:black !important;}
+/***********
+	Deux évènements le même jour
+***********/
+#calendar td.double_event{
+position:relative;}
+
+#calendar td.double_event a{
+line-height:15px;
+height:17px;}
+
+#calendar td.double_event a+a{
+height:18px; 
+border-top:1px solid #999;}
+
+#calendar td.double_event a:hover {
+color:transparent !important;}
+
+#calendar td.double_event span.span_double_event{
+color:white !important;
+position:absolute;
+top:10px;
+margin-left:-5px;}
+
+#calendar td.double_event a:hover ~ span.span_double_event{
+color:black !important;}
+
+.ajd.double_event a{
+color:transparent !important;}
+
+#calendar td.ajd.double_event span.span_double_event{
+color:black !important;}
+/***********
+	Jours particuliers
+***********/
+.sam{
+background-color: #f3f3f3;}
+
+.dim{
+background-color: #f3f3f3;}
+
+.aut{
+background-color: #f3f3f3;}
+
+.ajd{
+background-color:#dfdcdc;}
+
+.ajd a{
+color:black !important;}
+
+#calendrier {
+width: 100%;
+margin: 0;
+text-align: center;}
+
+#calendrier select{
+width: 49.4%;
+height:30px;
+margin: 0;
+padding: 0;}
+/***********
+	Infobulles
+***********/
+[data-tip]{
+position:relative;}
+
+[data-tip]:hover:before{
+content:attr(data-tip);
+position: absolute;
+padding: 0 10px;
+display:block;
+width:150px;
+height:36px;
+line-height:36px;
+overflow:hidden;
+background-color:gray;
+left:10px;
+top: 30px;
+border-radius: 3px;
+color:white;
+font-size: 11px;
+z-index:100;}
+
+.double_event a[data-tip]:hover:before{
+left:5px;
+top: 30px;}
+
+.double_event a+a[data-tip]:hover:before{
+top: 15px;}
+
+[data-tip]:hover:after {
+content:"";
+position: absolute;
+border-bottom: 8px solid gray;
+border-left: 8px solid transparent;
+border-right: 8px solid transparent;
+left:15px;
+top:25px;}
+
+.double_event a[data-tip]:hover:after {
+z-index:100;
+top:25px;}
+
+.double_event a+a[data-tip]:hover:after {
+top:10px;}
+

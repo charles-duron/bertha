@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<?php if(isset($meta_description)){echo $meta_description;} ?>
+		<?php if(isset($meta_keywords)){echo $meta_keywords;} ?>
+		<title><?php if(isset($titre_google)){echo $titre_google;}else{echo($_SESSION['titre_site']);} ?></title>
+		<?php if(isset($indexation)){echo $indexation;} ?> 
+		<?php if(isset($favicon)){echo $favicon;} ?>
+		<link rel="stylesheet" type="text/css" href="../css/font.php" />
+		<link rel="stylesheet" type="text/css" href="../css/contact.css" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css" /> 
+		<link rel="stylesheet" type="text/css" href="../css/audiojs.css" />  
+		<?php echo $_SESSION['style'];?>
+		<?php echo $_SESSION['lien_font'];?>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobile.customized.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+		<script type="text/javascript" src="../js/front.js"></script>
+		<script type="text/javascript" src="../audiojs/audio.min.js"></script>
+		<?php if(isset($fancybox)){echo $fancybox;} ?>
+	</head>
+	<body>
+	<script>
+		audiojs.events.ready(function()
+		{
+			var as = audiojs.createAll();
+		});
+	</script>
+
+		<!--++++++++++++++++++++++++ CONTENEUR GLOBAL +++++++++++++++++++++++++++++++-->
+		<div id="conteneur">
+			<?php if(isset($_SESSION['retour_bo'])){echo $_SESSION['retour_bo'];} ?>
+			<!--+++++++++++++++++++++++ #HEADER 1 ++++++++++++++++++++++++++++-->
+			<div id="header_1">
+				  <?php if(isset($menu_symbole)){echo $menu_symbole;} ?>
+				  <?php if(isset($form_recherche)){include($form_recherche);} ?>  
+				  <?php if(isset($bloc_reseaux)){echo($bloc_reseaux);} ?> 
+				  <?php if(isset($rss)){echo($rss);} ?> 
+			</div>
+
+			<!--+++++++++++++++++++++++ #HEADER 2 ++++++++++++++++++++++++++++-->
+			<div id="header_2">
+				<?php if(isset($_SESSION['logo_fo'])){echo $_SESSION['logo_fo'];} ?>
+				<div id="papillon"></div>
+				<?php echo $menu; ?>
+				<hr />
+			</div>
+
+
+			<!--++++++++++++++++++++++ #HEADER 3 ++++++++++++++++++++++++++++++++-->
+			<div id="header_3">
+			</div>
+
+			<!--+++++++++++++++++++++++++++ #SECTION_1 ++++++++++++++++++++++++++++-->    
+
+			<div id="section_1"></div>
+
+			<!--+++++++++++++++++++++++++++ #SECTION_2 +++++++++++++++++++++++++++++-->			
+			<div id="section_2">
+				<?php if(isset($zone_actus)){include($zone_actus);} ?>
+				<?php include($zone_principale); ?>
+				<hr />  
+			</div>
+
+			<!--+++++++++++++++++++++++++++ #SECTION_3+++++++++++++++++++++++++++++-->			
+			<div id="section_3">    
+				<?php if(isset($slider)){echo $slider;} ?>
+				<?php if(isset($calendrier)){include($calendrier);} ?>
+				<?php if(isset($syndication)){include($syndication);} ?>  
+			</div>
+
+			<!--+++++++++++++++++++++++++++ #FOOTER_1+++++++++++++++++++++++++++++-->
+			<div id="footer_1">
+				<div>
+				Institut DERMEA<br />
+				38 rue du Muguet<br />
+				Centre commercial Beau Soleil<br />
+				35510 CESSON-SÉVIGNÉ<br />
+				02 74 67 34 00
+				</div>
+				<div>
+				Horaires :<br />
+				de 9h00 à 18h00<br />
+				du mardi au samedi
+				</div>
+				<div>
+				<img src="../img/qrcode.png" alt="Institut DERMEA - Centre commercial Beau Soleil" />
+				</div>  
+			</div>
+
+			<!--+++++++++++++++++++++++++++ #FOOTER_2+++++++++++++++++++++++++++++-->
+			<div id="footer_2">
+				© Derméa - Centre commercial Beau Soleil - 35510 Cesson-Sévigné - <a href="global.php?page=mentions">Mentions légales</a> 
+			</div>
+
+		</div>
+	</body>
+
+</html>
+                   

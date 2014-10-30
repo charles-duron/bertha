@@ -1,0 +1,4 @@
+<form action="global.php?action=recherche" method="POST" id="form_recherche" >
+	<input type="text" placeholder="Rechercher" value="<?php if(isset($_POST['recherche'])){echo $_POST['recherche'];} ?>" name="recherche" />
+	<input type="submit" value="recherche" name="submit" />
+</form>

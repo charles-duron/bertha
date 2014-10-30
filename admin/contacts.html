@@ -1,0 +1,25 @@
+<form id="form_contact"<?php if(isset($invisible)) {echo $invisible;} ?> enctype="multipart/form-data" name="form_contact" action="admin.php?action=<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+<input disabled="disabled" id="destinataire_contact" value="Pour : <?php if(isset($_SESSION['mel_contact'])){echo $_SESSION['mel_contact'];}?>" type="text" name="mel_contact" />
+<textarea  id="message_mail" <?php if(isset($color_champ['rep_message'])){echo $color_champ['rep_message'];} ?>
+placeholder="Répondez au message sélectionné..." type="text" name="rep_message" >
+<?php if(isset($_POST['rep_message'])) {echo $_POST['rep_message']; } ?>
+</textarea>
+
+
+
+<div id="recapitulatif">
+   <p><strong>Nom :</strong> <?php if(isset($_SESSION['nom_contact'])){echo $_SESSION['nom_contact'] . " " . $_SESSION['prenom_contact'];}?></p>
+   <p><strong>Entreprise :</strong> <?php if(isset($_SESSION['entreprise'])){echo $_SESSION['entreprise'];}?></p>
+   <p><strong>Objet :</strong> <?php if(isset($_SESSION['objet'])){echo $_SESSION['objet'];}?></p>
+   <p><strong>Message :</strong></p>
+   <p><?php if(isset($_SESSION['message'])){echo $_SESSION['message'];}?></p>
+</div>
+
+<hr />
+<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+<div id="annuler"><a href="admin.php?action=contacts">Annuler</a></div>
+
+</form>
+<?php if(isset($liste_messages)){echo $liste_messages;} ?>
+

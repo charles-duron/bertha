@@ -1,0 +1,50 @@
+A faire : 
+	
+	- TOUS LES SOIRS : EXPORTER
+		
+	- compte : 
+		- gérer les possibilités de modif compte en fonction du niveau d'accréditation de la personne loguée
+		- aspect comptes centre
+		
+	- editeur :
+		- augmenter la taille des icones wysiwyg
+		- maps
+		
+	- medias :
+		
+	- player :
+		- pimper l'apparence :
+			- différents skins
+			- afficher le nom du media dans le player
+		
+	- page :
+		- la gestion ds mots-clé n'a pas l'air de marcher
+		- la réecriture d'url ne marche pas
+		
+	- evenements :
+		- si on veut afficher une partie du contenu de l'événement, s'arranger pour que les images ne s'affichent pas dans l'extrait
+		- gérer les interdictions de faire se chevaucher plus de 2 evenements
+		
+	- syndications :
+		- vérifier le fonctionnement du rss en ligne (clic sur icone rss en front)
+		
+	- back :
+		- faire cas albums...
+		- reorganiser admin.css
+		
+	- front :
+		- le player affiche 2 icones de chargement...
+		
+	- rss : 
+		- proposer l'ordonnancement des sources d'actu
+		- seules les actus avec un format type <rss> semblent s'afficher (ou format rss 2.0 ?)
+	
+	- contacts :
+		- l'envoi de mail ne fonctionne pas (apparemment)
+		- le système de réponse contact n'est pas clair
+		
+	- a vérifier : 
+		
+	- upgrades : 
+		- module planning / resa
+		- carte restau

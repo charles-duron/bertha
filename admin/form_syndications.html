@@ -1,0 +1,29 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> action="admin.php?action=<?php echo $action; ?>"  method="POST" id="form_syndications">    
+  <?php if(isset($avertissement)){echo $avertissement;} ?>  
+  <select name="id_langue" <?php if(isset($color_champ['id_langue'])){echo $color_champ['id_langue'];} ?>>
+  <?php if(isset($ld_langues)){echo $ld_langues;} ?>
+  </select>
+  <input type="text" name="titre_syndication" placeholder="Titre de la syndication" <?php if(isset($color_champ['titre_syndication'])){echo $color_champ['titre_syndication'];} ?>" value="<?php if(isset($_POST['titre_syndication'])){echo stripslashes($_POST['titre_syndication']);} ?>" />
+  <input type="text" name="url_syndication" placeholder="Adresse de la syndication" <?php if(isset($color_champ['url_syndication'])){echo $color_champ['url_syndication'];} ?>" value="<?php if(isset($_POST['url_syndication'])){echo stripslashes($_POST['url_syndication']);} ?>" />
+  <select <?php if(isset($color_champ['nombre'])){echo $color_champ['nombre'];} ?>" name="nombre">
+    <option class="option_vide" value="">Sélectionner le nombre de lignes</option>
+    <?php if(isset($ld_nombre)){echo $ld_nombre;} ?>
+  </select>
+  <hr />
+  <div class="options_page">
+    <h3>Options de la page</h3>
+    <div class="visibilite">
+      <span class="onoff">ON | OFF</span>
+      <hr />
+      <label>Visible</label>           
+      <input type="radio" name="affiche" value="non" <?php if(isset($checked['non'])) { echo $checked['non']; } ?> /> 
+      <input type="radio" name="affiche" value="oui" <?php if(isset($checked['oui'])) { echo $checked['oui']; } ?> /> 
+      <hr />    
+    </div>
+    <hr />
+  </div>
+  <input type="submit" name="submit" value="<?php echo $bouton; ?>" />
+</form>
+<script type="text/javascript">
+document.form_syndications.id_langue.focus();
+</script>

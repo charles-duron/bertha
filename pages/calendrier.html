@@ -1,0 +1,52 @@
+<div id="conteneur_calendrier">
+<form id="calendrier" method="POST" action="">
+<select name="mois" id="mois" onChange="reload(this.form)">
+<?php echo $ldMois; ?>
+</select>
+<select name="annee" id="annee" onChange="reload(this.form)">
+<?php echo $ldAnnees; ?>
+</select>
+</form>
+<?php echo $calEven; ?>
+</div>
+
+<script type="text/javascript">
+    var checkzero = <?php echo $checkzero; ?>;
+    var format = "<?php echo $format; ?>";
+    var ordre = new Array("<?php echo strtoupper(implode('", "', $ordre)); ?>");
+    /**
+     * Reload la fenêtre avec les nouveaux mois et année choisis
+     *
+     * @param   object      frm     L'object document du formulaire
+     */
+    function reload(frm)
+	{
+        var mois = frm.elements["mois"];
+        var annee = frm.elements["annee"];
+        //Debug du mois et année
+        var index1 = mois.options[mois.selectedIndex].value;
+        var index2 = annee.options[annee.selectedIndex].value;
+        //Envoi du formulaire
+        frm.submit();
+    }
+    /**
+     * Ajoute un zéro devant le jour et le mois s'ils sont plus petit que 10
+     *
+     * @param   integer     jour        Le numéro du jour dans le mois
+     * @param   integer     mois        Le numéro du mois
+     */
+    function checkNum(jour, mois){
+        tab = new Array();
+        tab[0] = jour;
+        tab[1] = mois;
+        if (this.checkzero){
+            if (jour < 10){
+                tab[0] = "0" + jour;
+            }
+            if (mois < 10){
+                tab[1] = "0" + mois;
+            }
+        }
+        return tab;
+    }  
+</script> 

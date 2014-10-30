@@ -1,0 +1,52 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> name="form_actu" id="form_actu" action="admin.php?action=<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+<input <?php if(isset($color_champ['titre_actu'])){echo $color_champ['titre_actu'];} ?> placeholder="Titre de l'actu" type="text" name="titre_actu" value="<?php if(isset($_POST['titre_actu'])) {echo $_POST['titre_actu']; } ?>" />
+
+<select name="id_langue" <?php if(isset($color_champ['id_langue'])){echo $color_champ['id_langue'];} ?>>
+<?php echo $ld_langues; ?>
+</select>
+<hr />
+<textarea name="contenu_actu" <?php if(isset($color_champ['contenu_actu'])){echo $color_champ['contenu_actu'];} ?> placeholder="Entrez votre texte ici..."><?php if(isset($_POST['contenu_actu'])){echo $_POST['contenu_actu']; }?></textarea>
+<hr />
+
+<div id="form_g">
+  <label class="label_long">Début de parution</label>
+  <input
+  <?php if(isset($color_champ['date_debut_actu'])){echo $color_champ['date_debut_actu'];} ?>
+  type="text" class="date" name="date_debut_actu" value="<?php if(isset($_POST['date_debut_actu'])) {echo $_POST['date_debut_actu']; } ?>" />
+  <a href="#" onClick="window.open('../outils/calendrier.php?frm=form_actu&ch=date_debut_actu', 'calendrier', 'width=320,height=180,scrollbars=0').focus();"><img src="../img/icones/calendrier.png" alt="" title="Calendrier" /></a>
+</div>
+<div id="form_d">
+  <label class="label_long">Fin de parution</label>
+  <input
+  <?php if(isset($color_champ['date_fin_actu'])){echo $color_champ['date_fin_actu'];} ?>
+  type="text" class="date" name="date_fin_actu" value="<?php if(isset($_POST['date_fin_actu'])) {echo $_POST['date_fin_actu']; } ?>" />
+  <a href="#" onClick="window.open('../outils/calendrier.php?frm=form_actu&ch=date_fin_actu', 'calendrier', 'width=320,height=180,scrollbars=0').focus();"><img src="../img/icones/calendrier.png" alt="" title="Calendrier" /></a>
+</div>
+<hr />
+<div class="options_page">
+  <h3>Options de la page</h3>
+  <div class="visibilite">
+    <span class="onoff">ON | OFF</span>
+    <hr />
+    <label>Flux RSS</label>  
+    <input type="radio" name="rss" value="non" <?php if(isset($checked['non'])) { echo $checked['non']; } ?> /> 
+    <input type="radio" name="rss" value="oui" <?php if(isset($checked['oui'])) { echo $checked['oui']; } ?> /> 
+    <hr />    
+  </div>
+  <hr />
+</div>
+
+<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+
+</form>
+
+<script type="text/javascript">
+document.form_actu.titre_actu.focus();
+</script>
+
+
+
+
+
+

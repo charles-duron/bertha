@@ -1,0 +1,23 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> name="form_template" action="<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+
+	<input placeholder="Saisissez le nom du template" <?php if(isset($color_champ['nom_template'])){echo $color_champ['nom_template'];} ?> type="text" name="nom_template" value="<?php if(isset($_POST['nom_template'])){echo $_POST['nom_template'];} ?>" />
+
+	<input placeholder="Saisissez le nom de l'auteur" <?php if(isset($color_champ['auteur_template'])){echo $color_champ['auteur_template'];} ?> type="text" name="auteur_template" value="<?php if(isset($_POST['auteur_template'])){echo $_POST['auteur_template'];} ?>" />
+	
+	<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+</form>
+
+<script type="text/javascript">
+document.form_template.nom_template.focus();
+</script>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<form name="form_langue" <?php if(isset($invisible)) {echo $invisible;} ?> action="<?php echo $action_form; ?>" method="POST" >
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+
+	<input placeholder="Saisissez le pays" <?php if(isset($color_champ['pays'])){echo $color_champ['pays'];} ?> type="text" name="pays" value="<?php if(isset($_POST['pays'])){echo $_POST['pays'];} ?>" />
+	
+	<input placeholder="Saisissez la langue" <?php if(isset($color_champ['langue'])){echo $color_champ['langue'];} ?> type="text" name="langue" value="<?php if(isset($_POST['langue'])){echo $_POST['langue'];} ?>" />	
+
+	<input placeholder="Saisissez le symbole (ex : FR pour français)" <?php if(isset($color_champ['langue'])){echo $color_champ['langue'];} ?> type="text" name="symbole" value="<?php if(isset($_POST['symbole'])){echo $_POST['symbole'];} ?>" />
+  	
+	<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+</form>
+
+<script type="text/javascript">
+document.form_langue.pays.focus();
+</script>

@@ -1,0 +1,20 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> id="form_rubrique" name="form_rubrique" action="admin.php?action=<?php echo $action_form; ?>" method="POST">
+<?php if(isset($avertissement)){echo $avertissement;} ?>
+<input <?php if(isset($color_champ['rubrique'])){echo $color_champ['rubrique'];} ?> placeholder="Intitulé de la rubrique" type="text" name="rubrique" value="<?php if(isset($_POST['rubrique'])) {echo $_POST['rubrique']; } ?>" />
+
+<select name="id_langue" <?php if(isset($color_champ['id_langue'])){echo $color_champ['id_langue'];} ?> <?php if(isset($disabled)){echo $disabled;} ?>>
+<?php echo $ld_langues; ?>
+</select>	
+<hr />
+<input type="submit" name="submit" value="<?php echo $bouton_form; ?>" />
+
+</form>
+<script type="text/javascript">
+document.form_rubrique.rubrique.focus();
+</script>
+
+
+
+
+
+

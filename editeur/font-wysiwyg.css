@@ -1,0 +1,45 @@
+body { font-family: 'Ubuntu Condensed', sans-serif;}
+
+body p {font-size:14px;}
+
+body #bloc_img {position:relative;top:0;left:0;z-index:1;display:inline-block;}
+
+body #bloc_img #opts_image, body #bloc_img #delete {display:block;position:absolute;top:15px;background-repeat:no-repeat;
+box-shadow:1px 1px 2px black;-moz-box-shadow:1px 1px 2px black;-webkit-box-shadow:1px 1px 2px black;background-color:rgba(255,255,255,0.8);
+z-index:2;cursor:pointer;} 
+
+body #bloc_img #opts_image {left:15px;color:#3b3b3b;font-size:12px;background-image:url('opts_image.png');background-position:left 5px center;
+padding:5px 10px 5px 23px;}
+
+body #bloc_img #delete {right:15px;background-image:url('delete.png');background-position:center center;height:13px;width:13px;padding:4px;}
+
+body #bloc_img #opts_image:hover, body #bloc_img #delete:hover {background-color:rgba(255,255,255,0.95);}
+
+body #fond {position:fixed;top:0;left:0;z-index:2;background-color:rgba(0,0,0,0.2);width:100%;height:100%;}
+
+body #fond #bloc { background-color:#fbfbfb;position:absolute;z-index:5;width:220px;height:190px;top:50%;left:50%;margin-left:-115px;
+margin-top:-105px;padding:10px 15px;box-shadow:1px 1px 2px black;-moz-box-shadow:1px 1px 2px black;-webkit-box-shadow:1px 1px 2px black;}
+
+body #fond #bloc h3 {margin:0;font-weight:normal;font-size:15px;color:#0897d2;margin-bottom:10px;} 
+
+body #fond form {padding:10px;border:1px dotted #aaaaaa;}
+
+body #fond form .left {float:left;width:46%}
+
+body #fond form .right {float:right;width:46%;}
+
+body #fond form label {font-size:13px;display:block;margin-left:2px;padding-top:3px;clear:both;}
+
+body #fond form input[type="text"] {margin-top:5px;margin-bottom:5px;padding:0 2px;}
+
+body #width {width:100%;}
+
+body #m_top, body #m_right, body #m_bottom, body #m_left {width:21%;display:block;float:left;}
+
+body #m_top, body #m_right, body #m_bottom  {margin-right:5%;} 
+
+body #m_left {margin-right:0;}
+
+body #fond form select { width:100%;margin:5px 0;}
+
+body #fond input[type="button"] {width:40px;display:block;margin:0 auto;}   

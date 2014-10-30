@@ -1,0 +1,28 @@
+body{
+  background-color:#64809d;
+}
+
+#gauche{
+  background:url(../themes/fond_fleur.png) no-repeat center bottom #cfb3c5;
+  background-size:170px;  
+}
+
+.shadow_gauche {
+ box-shadow:1px 0 5px white;
+ -moz-box-shadow:1px 0 5px white;
+ -webkit-box-shadow:1px 0 5px white;
+ -o-box-shadow:1px 0 5px white;
+ -ms-box-shadow:1px 0 5px white;
+}
+  
+#centre{
+  background-color:#ecd8e5;
+  }
+
+#gauche #logo{
+  color:#ddccd7;
+}
+
+#gauche ul li a{
+  background-color:rgba(188,156,177,0.9);#bc9cb1;
+}

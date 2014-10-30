@@ -1,0 +1,5 @@
+<form id="confirm_suppression" action="#" method="POST">
+  <label id="avertissement">Voulez-vous confirmer la suppression <?php if(isset($precision_suppression)){echo $precision_suppression; unset($precision_suppression);} ?>?</label>
+  <div><a href="admin.php?action=<?php echo $action_suppression_oui; ?>">OUI</a></div>
+  <div><a href="admin.php?action=<?php echo $action_suppression_non; ?>">NON</a></div>
+</form>

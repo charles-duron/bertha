@@ -1,0 +1,84 @@
+<form <?php if(isset($invisible)) {echo $invisible;} ?> action="admin.php?action=<?php echo $action; ?>" method="POST" id="form_pages" name="form_pages">
+
+	<?php if(isset($avertissement)){echo $avertissement;} ?> 
+
+	<select name="id_langue" <?php if(isset($color_champ['id_langue'])){echo $color_champ['id_langue'];}?>>
+		<option value="">Sélectionner la langue</option>
+		<?php if(isset($langues)){echo $langues;} ?>
+	</select>
+
+	<select name="id_rubrique" <?php if(isset($color_champ['id_rubrique'])){echo $color_champ['id_rubrique'];}?>>
+		<option value="">Sélectionner la rubrique</option>
+	</select>  
+
+	<input <?php if(isset($color_champ['titre_page'])){echo $color_champ['titre_page'];} ?> type="text" name="titre_page" placeholder="Titre de la page" value="<?php if(isset($_POST['titre_page'])){echo stripslashes($_POST['titre_page']);} ?>" title="Titre de la page" />
+	
+	<input type="text" name="titre_google" <?php if(isset($color_champ['titre_google'])){echo $color_champ['titre_google'];} ?> placeholder="Titre Google" value="<?php if(isset($_POST['titre_google'])){echo stripslashes($_POST['titre_google']);} ?>" title="Titre google" />
+	
+	<input type="text" name="meta" <?php if(isset($color_champ['meta'])){echo $color_champ['meta'];} ?> placeholder="Meta description" value="<?php if(isset($_POST['meta'])){echo stripslashes($_POST['meta']); } ?>" title="Meta description" />
+	
+	<input type="text" name="url_rewriting" <?php if(isset($color_champ['url_rewriting'])){echo $color_champ['url_rewriting'];} ?> placeholder="Nom du fichier dans l'URL" value="<?php if(isset($_POST['url_rewriting'])){echo stripslashes($_POST['url_rewriting']);} ?>" title="Nom du fichier dans l'URL" />
+	
+	<input type="hidden" name="gabarit" value="<?php if(isset($_POST['gabarit']) && !empty($_POST['gabarit'])){echo $_POST['gabarit'];} else {echo 1;} ?>" />
+
+
+	<div id="liens_gabarit">
+		<h3>Mise en forme</h3>
+		<ul></ul>
+		<hr />
+	</div> 
+
+	<div class="bloc_gabarit">        
+		<div class="gabarit">   
+			<textarea name="zone1"><?php if(isset($_POST['zone1'])) { echo stripslashes($_POST['zone1']); } ?></textarea>
+			<textarea name="zone2"><?php if(isset($_POST['zone2'])) { echo stripslashes($_POST['zone2']); } ?></textarea> 
+			<textarea name="zone3"><?php if(isset($_POST['zone3'])) { echo stripslashes($_POST['zone3']); } ?></textarea> 
+			<hr />     
+		</div>
+	</div>
+
+	<div class="options_page">
+		<h3>Options de la page</h3>
+		<div class="visibilite">
+			<span class="onoff">ON | OFF</span>
+			<hr />
+			<label>Visibilité</label>           
+			<input type="radio" name="visible" value="non" <?php if(isset($check['non'])) { echo $check['non']; } ?> /> 
+			<input type="radio" name="visible" value="oui" <?php if(isset($check['oui'])) { echo $check['oui']; } ?> /> 
+			<hr />
+			<label>Indexation</label>
+			<input type="radio" name="indexation" value="non" <?php if(isset($check2['non'])) { echo $check2['non']; } ?> /> 
+			<input type="radio" name="indexation" value="oui" <?php if(isset($check2['oui'])) { echo $check2['oui']; } ?>/>       
+			<hr />
+			<label>Mots clés</label>
+			<input type="radio" name="keyword" value="non" <?php if(isset($check3['non'])) { echo $check3['non']; } ?> /> 
+			<input type="radio" name="keyword" value="oui" <?php if(isset($check3['oui'])) { echo $check3['oui']; } ?>/>       
+			<hr />
+		</div>
+		<div class="keyword">
+			<input type="text" name="ajout_mot" disabled="true" placeholder="Ajouter un mot clé" value="" />
+			<input type="hidden" name="liste_mots" value="<?php if(isset($_POST['liste_mots'])) { echo stripslashes($_POST['liste_mots']); } ?>" />
+			<a href="javascript:void(0)"><img src="../img/icones/ajouter_disabled.png" /></a>
+			<div class="liste_mots">
+				<?php if(isset($_POST['liste_mots']) && !empty($_POST['liste_mots'])) 
+					{ 
+						$explode_mot = explode(",", stripslashes($_POST['liste_mots']));
+						for($i = 0; $i < count($explode_mot); $i++)
+						{               
+							echo "<span class=\"mot\">" . $explode_mot[$i] . "</span>";
+						}
+					}
+				?>
+			</div>
+		</div>
+		<hr />
+	</div>
+	
+	<input type="submit" name="submit" value="<?php echo $bouton; ?>" />
+	
+</form>
+
+<script type="text/javascript">
+document.form_pages.id_langue.focus();
+</script>
+

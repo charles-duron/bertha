@@ -1,0 +1,74 @@
+#form_contact{
+  width:100%;
+  margin:0 auto;
+  padding:10px 0 20px;
+}
+
+#form_contact label{
+  width:70%;
+  margin:10px auto 5px;
+  display:block;
+  color:gray;
+}
+#form_contact #avertissement{
+  color:#ce4ba2;
+}
+
+#form_contact input{
+  width:70%;
+  margin:10px auto 5px;
+  height:25px;
+  border:1px solid #e2e2e2;
+  display:block;
+  padding:4px 1%;
+}
+
+#form_contact input:nth-child(-n+2){
+  width:40%;
+  margin-left:14%;
+}
+
+#form_contact input:nth-child(5){
+  margin-bottom:0;
+  border-bottom:none;
+}
+
+#form_contact input[type=submit]{
+  display:block;
+  padding:5px 10px;
+  height:auto;
+  width:120px;
+  margin:20px auto 0;
+}
+
+#form_contact textarea{
+  display:block;
+  font-family:inherit;
+  font-size:75%;
+  padding:10px 1%;
+  height:200px;
+  resize:none;
+  width:70%;
+  margin:0 auto 5px;
+  border:1px solid #e2e2e2;
+}
+
+#color_champ{
+  background-color:#fbebf6;
+  border:1px solid #ce4ba2;
+}
+
+#signature{
+  padding-top:40px;
+  text-align:right;
+  font-style:italic;
+  width:60%;
+}
+
+#captcha{
+  display:block;
+  margin:auto;
+}
+
+
+
